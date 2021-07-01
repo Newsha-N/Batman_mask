@@ -60,13 +60,16 @@ function draw()
         ImBatman.play()
     }
   
-    let leftsmile = latestpredictions.scaledMesh[61];
+    let leftsmile = latestpredictions.scaledMesh[14];
     let rightsmile = latestpredictions.scaledMesh[291];
     let smilelength = Math.abs(leftsmile[0] - rightsmile[0]);
 
-    if(smilelength > 65 && !ImBatman.isPlaying() && !smile.isPlaying())
+    let leftchin = latestpredictions.scaledMesh[149];
+    let rightchin = latestpredictions.scaledMesh[179];
+    let chinlength = Math.abs(leftchin[0] - rightchin[0]);
+    if(smilelength/chinlength > 2 && !ImBatman.isPlaying() && !smile.isPlaying())
     {
-        smile.play()
+       smile.play()
     }
         
                 imageMode(CENTER);
